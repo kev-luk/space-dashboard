@@ -8,6 +8,9 @@
 
 body {
     font-family: 'Quicksand', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .title-container {
@@ -24,5 +27,7 @@ body {
     font-size: 1.75rem;
 }
 
-.image-container {
+.astronomy-img {
+    width: 300px;
+    height: 200px;
 }
