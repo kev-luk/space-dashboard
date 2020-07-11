@@ -1,0 +1,26 @@
+{
+    "name": "nasa-gallery",
+    "version": "1.0.0",
+    "description": "Created using NASA API",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "devStart": "nodemon app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Kevin-Luk-Hub/nasa-gallery.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Kevin-Luk-Hub/nasa-gallery/issues"
+    },
+    "homepage": "https://github.com/Kevin-Luk-Hub/nasa-gallery#readme",
+    "dependencies": {
+        "axios": "^0.19.2",
+        "express": "^4.17.1",
+        "nodemon": "^2.0.4"
+    }
+}

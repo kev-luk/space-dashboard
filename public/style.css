@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.title-container {
+    text-align: center;
+    line-height: 1.75;
+    margin-top: 2em;
+}
+
+.title-container h1 {
+    font-size: 3rem;
+}
+
+.title-container h2 {
+    font-size: 1.75rem;
+}
+
+.image-container {
+}
