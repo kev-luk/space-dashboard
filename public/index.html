@@ -5,47 +5,80 @@
         <link rel="stylesheet" href="style.css" />
         <title>Gallery</title>
     </head>
-    <body>
-        <div class="post-container">
-            <div class="image-container">
-                <img src="" alt="" class="astronomy-img" />
-            </div>
-            <div class="img-info">
-                <div class="img-date">
-                    <span class="date">July 11, 2020</span>
-                </div>
-                <h1 class="post-title">Title</h1>
-                <p class="post-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Dolor voluptas, illum nostrum beatae animi deserunt
-                    cupiditate libero aliquid odio ducimus praesentium eaque
-                    cumque, quia laborum ipsa eligendi culpa, adipisci sit
-                    dolorum amet? Eius, saepe. Voluptatum nihil eius debitis
-                    ullam perferendis cum quo cumque quam, aliquid ab magnam
-                    placeat, officia eveniet reiciendis omnis suscipit libero
-                    aspernatur animi fugiat dolor rem sunt dicta dolorem.
-                    Facilis delectus quidem labore voluptatibus nemo, porro
-                    dolorum dolore, commodi, mollitia vero fugit? Ex itaque
-                    maiores esse? Laudantium quos maiores necessitatibus
-                    quisquam dolor. Ab ratione corporis tenetur velit ipsa? Illo
-                    totam necessitatibus reiciendis quisquam nisi facere
-                    quibusdam sit, numquam vero aliquid impedit eos aliquam
-                    ratione odio dignissimos tenetur accusamus quas rerum
-                    nostrum consectetur libero earum deserunt asperiores. Vel
-                    omnis enim molestiae modi nihil accusamus architecto ab
-                    doloremque distinctio, eveniet atque hic, quam, alias libero
-                    soluta cum consequuntur laudantium inventore aliquam porro
-                    mollitia officia! Aperiam tenetur nesciunt, atque non odit
-                    delectus, consequatur doloremque quod est fugiat aliquam
-                    architecto qui laborum saepe perspiciatis minima voluptatem
-                    quaerat id, incidunt in? Aliquid soluta iusto, illum
-                    recusandae ab nobis, minima ipsum doloribus obcaecati nemo
-                    quibusdam enim. Doloremque rem, nisi fugiat harum amet,
-                    architecto impedit eligendi dolorem numquam nulla expedita
-                    unde consectetur blanditiis fuga.
+    <body id="scroll-bar">
+        <div class="page-container">
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#APOD">APOD</a></li>
+                    <li><a href="#neows">NeoWs</a></li>
+                    <li><a href="#earth">Earth</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+            <section id="home">
+                <h1>Welcome</h1>
+                <p class="lead">
+                    Daily space-related information compiled into an
+                    easy-to-read page
                 </p>
-            </div>
+            </section>
+            <section id="APOD">
+                <div class="post-container">
+                    <div class="image-container"></div>
+                    <div class="post-description">
+                        <div class="post-info">
+                            <h1 class="title">Title</h1>
+                            <h3 class="date">Date</h3>
+                        </div>
+                        <p class="post-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Dolor voluptas, illum nostrum beatae animi
+                            deserunt cupiditate libero aliquid odio ducimus
+                            praesentium eaque cumque, quia laborum ipsa eligendi
+                            culpa, adipisci sit dolorum amet? Eius, saepe.
+                            Voluptatum nihil eius debitis ullam perferendis cum
+                            quo cumque quam, aliquid ab magnam placeat, officia
+                            eveniet reiciendis omnis suscipit libero aspernatur
+                            animi fugiat dolor rem sunt dicta dolorem. Facilis
+                            delectus quidem labore voluptatibus nemo, porro
+                            dolorum dolore, commodi, mollitia vero fugit? Ex
+                            itaque maiores esse? Laudantium quos maiores
+                            necessitatibus quisquam dolor.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section id="neows">
+                <h1>Welcome</h1>
+                <p class="lead">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Officiis veniam, culpa earum modi cumque deserunt dolorem
+                    esse ad aut perferendis? Iste eveniet aspernatur, sed ea
+                    laboriosam quaerat ad excepturi quos.
+                </p>
+            </section>
+            <section id="earth">
+                <h1>Welcome</h1>
+                <p class="lead">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Officiis veniam, culpa earum modi cumque deserunt dolorem
+                    esse ad aut perferendis? Iste eveniet aspernatur, sed ea
+                    laboriosam quaerat ad excepturi quos.
+                </p>
+            </section>
+            <section id="about">
+                <h1>About</h1>
+                <p class="lead">
+                    Powered by NASA APIs
+                </p>
+                <p>
+                    Created by Kevin Luk
+                </p>
+            </section>
         </div>
+        <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
         <script src="main.js"></script>
+        <script src="./smooth-scroll.js"></script>
     </body>
 </html>

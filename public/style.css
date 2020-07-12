@@ -8,26 +8,142 @@
 
 body {
     font-family: 'Quicksand', sans-serif;
+    background-color: #eee;
+    line-height: 1.6;
+    height: 100vh;
+    color: black;
+    overflow: hidden;
+}
+
+.page-container {
+    width: 100%;
+    height: 100%;
+}
+
+.nav-bar {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    height: 60px;
+}
+
+.nav-bar ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    text-decoration: none;
+    width: 100%;
+}
+
+.nav-bar ul li {
+    margin: 0em 1em;
+    padding: 1em;
+}
+
+.nav-bar ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    font-weight: 900;
+    transition-property: opacity;
+    transition-duration: 300ms;
+}
+
+.nav-bar ul li a:hover {
+    opacity: 0.5;
+}
+
+#home,
+#about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    scroll-snap-align: center;
+}
+
+#home h1,
+#about h1 {
+    font-size: 4rem;
+    margin-bottom: 0.2em;
+}
+
+#home p,
+#about p {
+    font-size: 1.5rem;
+}
+
+#home {
+}
+
+#APOD {
+    width: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.title-container {
-    text-align: center;
-    line-height: 1.75;
-    margin-top: 2em;
+.post-container {
+    display: flex;
+    margin: 0em 3.5em;
+    height: 65%;
+    padding: 1em;
 }
 
-.title-container h1 {
-    font-size: 3rem;
+.page-container h1 {
+    font-size: 2rem;
+    font-weight: 900;
 }
 
-.title-container h2 {
-    font-size: 1.75rem;
+.page-container h3 {
+    opacity: 0.3;
+    margin-bottom: 0.5em;
 }
 
-.astronomy-img {
-    width: 300px;
-    height: 200px;
+.page-container p {
+    font-size: 0.95rem;
+    font-weight: 500;
+    overflow: auto;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    margin-right: 2em;
+    background-color: grey;
+    border-radius: 10px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
+        0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 8px rgba(0, 0, 0, 0.11),
+        0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 32px rgba(0, 0, 0, 0.11);
+}
+
+.post-description {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 60%;
+}
+
+#neows {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#earth {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

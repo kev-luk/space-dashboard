@@ -1,12 +1,24 @@
-const postTitle = document.querySelector('.post-title');
-const astronomyIMG = document.querySelector('.astronomy-img');
+const astronomyIMG = document.querySelector('.image-container');
+const titleElement = document.querySelector('.title');
 const dateElement = document.querySelector('.date');
+const postTextElement = document.querySelector('.post-text');
 
-fetch('/space')
+fetch('/astro')
     .then((res) => res.json())
     .then((data) => {
         console.log(data);
-        postTitle.innerHTML = data.title;
-        astronomyIMG.src = data.hdurl;
-        dateElement.innerHTML = data.date;
+        fillInfo(data);
     });
+
+fetch('/asteroid')
+    .then((res) => res.json())
+    .then((data) => {
+        console.log(data);
+    });
+
+function fillInfo(data) {
+    titleElement.innerHTML = data.title;
+    dateElement.innerHTML = data.date;
+    astronomyIMG.style.background = `url(${data.hdurl}) no-repeat center center/cover`;
+    postTextElement.innerHTML = data.explanation;
+}
