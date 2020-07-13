@@ -24,6 +24,7 @@
         "express": "^4.17.1",
         "moment": "^2.27.0",
         "nodemon": "^2.0.4",
+        "simplebar": "^5.2.1",
         "smooth-scrollbar": "^8.5.2"
     }
 }

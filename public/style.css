@@ -15,6 +15,10 @@ body {
     overflow: hidden;
 }
 
+.simplebar-scrollbar::before {
+    background-color: red;
+}
+
 .page-container {
     width: 100%;
     height: 100%;
@@ -48,7 +52,7 @@ body {
     color: black;
     font-weight: 900;
     transition-property: opacity;
-    transition-duration: 300ms;
+    transition-duration: 400ms;
 }
 
 .nav-bar ul li a:hover {
@@ -78,8 +82,7 @@ body {
     font-size: 1.5rem;
 }
 
-#home {
-}
+/* APOD Section */
 
 #APOD {
     width: 100%;
@@ -89,27 +92,50 @@ body {
     align-items: center;
 }
 
+.apod-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.apod-title {
+    font-size: 1.5rem;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
 .post-container {
     display: flex;
     margin: 0em 3.5em;
-    height: 65%;
+    height: 55%;
     padding: 1em;
+    justify-content: center;
 }
 
-.page-container h1 {
-    font-size: 2rem;
+.post-description {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 55%;
+}
+
+.title {
+    font-size: 1.75rem;
     font-weight: 900;
 }
 
-.page-container h3 {
+.date {
     opacity: 0.3;
     margin-bottom: 0.5em;
 }
 
-.page-container p {
+.post-text {
     font-size: 0.95rem;
     font-weight: 500;
     overflow: auto;
+    width: 100%;
 }
 
 .image-container {
@@ -125,13 +151,7 @@ body {
         0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 32px rgba(0, 0, 0, 0.11);
 }
 
-.post-description {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    width: 60%;
-}
-
+/* NEOWS Section */
 #neows {
     width: 100%;
     height: 100vh;
@@ -140,6 +160,29 @@ body {
     align-items: center;
 }
 
+.neows-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+}
+
+.neows-title {
+    font-size: 1.5rem;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.info-container {
+    display: flex;
+    justify-content: center;
+    margin: 0em 3.5em;
+    height: 65%;
+    padding: 1em;
+}
+
+/* EARTH Section */
 #earth {
     width: 100%;
     height: 100vh;

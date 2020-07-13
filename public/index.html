@@ -3,9 +3,13 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/simplebar@5.2.1/dist/simplebar.css"
+        />
         <title>Gallery</title>
     </head>
-    <body id="scroll-bar">
+    <body>
         <div class="page-container">
             <nav class="nav-bar">
                 <ul>
@@ -24,39 +28,71 @@
                 </p>
             </section>
             <section id="APOD">
-                <div class="post-container">
-                    <div class="image-container"></div>
-                    <div class="post-description">
-                        <div class="post-info">
-                            <h1 class="title">Title</h1>
-                            <h3 class="date">Date</h3>
+                <div class="apod-container">
+                    <div class="apod-title">
+                        <h1>Astronomy Picture of the Day</h1>
+                    </div>
+                    <div class="post-container">
+                        <div class="image-container"></div>
+                        <div class="post-description">
+                            <div class="post-info">
+                                <h1 class="title">Title</h1>
+                                <h3 class="date">Date</h3>
+                            </div>
+                            <p class="post-text">
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Dolor voluptas, illum nostrum
+                                beatae animi deserunt cupiditate libero aliquid
+                                odio ducimus praesentium eaque cumque, quia
+                                laborum ipsa eligendi culpa, adipisci sit
+                                dolorum amet? Eius, saepe. Voluptatum nihil eius
+                                debitis ullam perferendis cum quo cumque quam,
+                                aliquid ab magnam placeat, officia eveniet
+                                reiciendis omnis suscipit libero aspernatur
+                                animi fugiat dolor rem sunt dicta dolorem.
+                                Facilis delectus quidem labore voluptatibus
+                                nemo, porro dolorum dolore, commodi, mollitia
+                                vero fugit? Ex itaque maiores esse? Laudantium
+                                quos maiores necessitatibus quisquam dolor.
+                            </p>
                         </div>
-                        <p class="post-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Dolor voluptas, illum nostrum beatae animi
-                            deserunt cupiditate libero aliquid odio ducimus
-                            praesentium eaque cumque, quia laborum ipsa eligendi
-                            culpa, adipisci sit dolorum amet? Eius, saepe.
-                            Voluptatum nihil eius debitis ullam perferendis cum
-                            quo cumque quam, aliquid ab magnam placeat, officia
-                            eveniet reiciendis omnis suscipit libero aspernatur
-                            animi fugiat dolor rem sunt dicta dolorem. Facilis
-                            delectus quidem labore voluptatibus nemo, porro
-                            dolorum dolore, commodi, mollitia vero fugit? Ex
-                            itaque maiores esse? Laudantium quos maiores
-                            necessitatibus quisquam dolor.
-                        </p>
                     </div>
                 </div>
             </section>
             <section id="neows">
-                <h1>Welcome</h1>
-                <p class="lead">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Officiis veniam, culpa earum modi cumque deserunt dolorem
-                    esse ad aut perferendis? Iste eveniet aspernatur, sed ea
-                    laboriosam quaerat ad excepturi quos.
-                </p>
+                <div class="neows-container">
+                    <div class="neows-title">
+                        <h1>Asteroids NeoWs</h1>
+                    </div>
+                    <div class="info-container">
+                        <div class="info-text">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Atque dignissimos veniam
+                                repellendus voluptas omnis, dolorum nihil!
+                                Suscipit error incidunt doloribus architecto
+                                eaque, dolores nemo aspernatur quisquam odio
+                                libero. Enim, reiciendis nobis. Amet eius,
+                                libero fuga magni corrupti distinctio, quisquam
+                                quaerat quis dignissimos consectetur consequatur
+                                excepturi maiores ipsam eum ullam nesciunt.
+                            </p>
+                        </div>
+                        <div class="info-data">
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur
+                                adipisicing elit. Excepturi incidunt modi
+                                laudantium nostrum eaque. Eligendi quidem
+                                tempora non ab officia illo corporis modi rerum
+                                inventore soluta tenetur, ut recusandae
+                                repudiandae vitae accusantium facere mollitia
+                                qui. Soluta quo porro sequi aliquam explicabo
+                                omnis fugiat necessitatibus mollitia esse,
+                                adipisci dicta, quia repellat?
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </section>
             <section id="earth">
                 <h1>Welcome</h1>
@@ -78,7 +114,7 @@
             </section>
         </div>
         <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
-        <script src="main.js"></script>
+        <script src="main.js" type="module"></script>
         <script src="./smooth-scroll.js"></script>
     </body>
 </html>
