@@ -197,38 +197,40 @@ body {
     text-align: center;
 }
 
-.info-container {
+.data-container {
     display: flex;
     justify-content: center;
     margin: 0em 5em;
     height: 55%;
+    width: 100%;
     padding: 1em;
+    /* display: flex;
+    margin: 0em 5em;
+    height: 55%;
+    padding: 1em;
+    justify-content: center; */
 }
 
-.info-text {
+.data-text {
+    width: 40%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: column;
     text-align: left;
-    width: 45%;
+    line-height: 1.75;
+    overflow: auto;
 }
 
-.info-text h1 {
-    font-size: 1.4rem;
-    margin-bottom: 0.2em;
+.hist-text {
+    margin-bottom: 2em;
 }
 
-.info-data {
-    width: 55%;
-}
-
-.info-header {
-    margin-bottom: 0.6em;
-}
-
-.info-text p {
-    font-size: 1.1rem;
-    margin-bottom: 0.2rem;
+.data-graph {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #totalAsteroids,
@@ -246,4 +248,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.earth-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }

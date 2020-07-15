@@ -55,16 +55,16 @@
                     <div class="neows-title">
                         <h1>Asteroids NeoWs</h1>
                     </div>
-                    <div class="info-container">
-                        <div class="info-text">
-                            <div class="info-header">
+                    <div class="data-container">
+                        <div class="data-text">
+                            <div class="hist-text">
                                 <h1>Historical 7 Day Data</h1>
                                 <p>
                                     Total number of near-Earth asteroids:
                                     <span id="totalAsteroids">-</span>
                                 </p>
                             </div>
-                            <div class="asteroid">
+                            <div class="asteroid-text">
                                 <h1>Closest Asteroid to Earth</h1>
                                 <p>Name: <span id="asteroidName">-</span></p>
                                 <p>
@@ -76,30 +76,20 @@
                                     <span id="asteroidDiameter">-</span>
                                 </p>
                                 <p>
-                                    Date/Time: <span id="asteroidDate">-</span>
+                                    Date/Time:
+                                    <span id="asteroidDate">-</span>
                                 </p>
                             </div>
                         </div>
-                        <div class="info-data">
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Odio, at? Laborum maxime ea
-                                aliquam facilis harum earum nisi aut porro
-                                deleniti assumenda! Animi ex quisquam suscipit
-                                eos? Eos, ab harum.
-                            </p>
+
+                        <div class="data-graph">
+                            <canvas id="myChart"></canvas>
                         </div>
                     </div>
                 </div>
             </section>
             <section id="earth">
-                <h1>Welcome</h1>
-                <p class="lead">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Officiis veniam, culpa earum modi cumque deserunt dolorem
-                    esse ad aut perferendis? Iste eveniet aspernatur, sed ea
-                    laboriosam quaerat ad excepturi quos.
-                </p>
+                <div class="earth-container"></div>
             </section>
             <section id="about">
                 <h1>About</h1>
@@ -112,6 +102,7 @@
             </section>
         </div>
         <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
         <script src="main.js" type="module"></script>
         <script src="./object/smooth-scroll.js"></script>
     </body>

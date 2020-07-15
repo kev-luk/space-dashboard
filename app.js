@@ -23,10 +23,14 @@ app.get('/astro', (req, res) => {
 
 app.get('/asteroid', (req, res) => {
     const url = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${moment()
-        .subtract(1, 'days')
+        .subtract(7, 'days')
         .format('YYYY-MM-DD')}&end_date=${moment().format(
         'YYYY-MM-DD'
     )}&api_key=${API_KEY}`;
+
+    console.log(moment().subtract(7, 'days').format('YYYY-MM-DD'));
+    console.log(moment().format('YYYY-MM-DD'));
+
     axios({
         url: url,
         responseType: 'json',
