@@ -27,14 +27,19 @@ app.get('/asteroid', (req, res) => {
         .format('YYYY-MM-DD')}&end_date=${moment().format(
         'YYYY-MM-DD'
     )}&api_key=${API_KEY}`;
-
-    console.log(moment().subtract(7, 'days').format('YYYY-MM-DD'));
-    console.log(moment().format('YYYY-MM-DD'));
-
     axios({
         url: url,
         responseType: 'json',
     }).then((data) => res.json(data.data));
+});
+
+app.post('/earth', (req, res) => {
+    console.log(req.body);
+    // const url = `https://api.nasa.gov/planetary/earth/assets?lon=-95.33&lat=29.78&date=2018-01-01&&dim=0.10&api_key=DEMO_KEY`;
+    // axios({
+    //     url: url,
+    //     responseType: 'json',
+    // }).then((data) => res.json(data.data));
 });
 
 app.listen(PORT, () => {

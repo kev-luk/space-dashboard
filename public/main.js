@@ -1,8 +1,10 @@
-import Asteroid from './object/asteroid.js';
+import Asteroid from './object/Asteroid.js';
+import Day from './object/day.js';
 
 const astronomyIMG = document.querySelector('.image-container');
 const titleElement = document.querySelector('.title');
-const dateElement = document.querySelector('.date');
+const authorElement = document.querySelector('#author');
+const dateElement = document.querySelector('#date');
 const postTextElement = document.querySelector('.post-text');
 
 const totalAsteroids = document.querySelector('#totalAsteroids');
@@ -15,20 +17,25 @@ const ctx = document.getElementById('myChart');
 fetch('/astro')
     .then((res) => res.json())
     .then((data) => {
-        // console.log(data);
         fillAPOD(data);
     });
 
 fetch('/asteroid')
     .then((res) => res.json())
     .then((data) => {
-        console.log(data);
         fillNEOWS(data);
         createChart(data);
     });
 
+// fetch('/earth')
+//     .then((res) => res.json())
+//     .then((data) => {
+//         fillEarth(data);
+//     });
+
 function fillAPOD(data) {
     titleElement.innerHTML = data.title;
+    authorElement.innerHTML = data.copyright;
     dateElement.innerHTML = data.date;
 
     if (data.media_type == 'image') {
@@ -51,6 +58,8 @@ function fillNEOWS(data) {
     )} km`;
     asteroidDate.innerHTML = findNearestAsteroid(data).closestAproachDate;
 }
+
+function fillEarth(data) {}
 
 function createVideo(data) {
     let video = document.createElement('iframe');
@@ -104,19 +113,7 @@ function findNearestAsteroid(data) {
 function createChart(data) {
     let dates = Object.keys(data.near_earth_objects);
 
-    console.log(dates);
-
-    const week = [
-        'Sunday',
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday',
-        'Saturday',
-    ];
-
-    const sortedList = dates.sort((a, b) => {
+    let sortedDates = dates.sort((a, b) => {
         if (a > b) {
             return 1;
         } else {
@@ -124,22 +121,41 @@ function createChart(data) {
         }
     });
 
-    let daysOfWeek = [];
+    const finalDates = sortedDates.map((day) => day.slice(5));
 
-    console.log(sortedList);
+    const currWeek = [];
     for (let i = 0; i < dates.length; i++) {
-        let day = new Date(dates[i]).getDay();
-        console.log(day);
+        let numAsteroids = data.near_earth_objects[sortedDates[i]].length;
+        let day = new Day(finalDates[i], numAsteroids);
+        currWeek.push(day);
     }
 
     let myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: [
+                currWeek[0].getDate(),
+                currWeek[1].getDate(),
+                currWeek[2].getDate(),
+                currWeek[3].getDate(),
+                currWeek[4].getDate(),
+                currWeek[5].getDate(),
+                currWeek[6].getDate(),
+                currWeek[7].getDate(),
+            ],
             datasets: [
                 {
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
+                    label: '# of Asteroids',
+                    data: [
+                        currWeek[0].getNumAsteroids(),
+                        currWeek[1].getNumAsteroids(),
+                        currWeek[2].getNumAsteroids(),
+                        currWeek[3].getNumAsteroids(),
+                        currWeek[4].getNumAsteroids(),
+                        currWeek[5].getNumAsteroids(),
+                        currWeek[6].getNumAsteroids(),
+                        currWeek[7].getNumAsteroids(),
+                    ],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
@@ -147,6 +163,8 @@ function createChart(data) {
                         'rgba(75, 192, 192, 0.2)',
                         'rgba(153, 102, 255, 0.2)',
                         'rgba(255, 159, 64, 0.2)',
+                        'rgba(227, 0, 247, 0.2)',
+                        'rgba(153, 153, 153, 0.2)',
                     ],
                     borderColor: [
                         'rgba(255, 99, 132, 1)',
@@ -155,22 +173,42 @@ function createChart(data) {
                         'rgba(75, 192, 192, 1)',
                         'rgba(153, 102, 255, 1)',
                         'rgba(255, 159, 64, 1)',
+                        'rgba(227, 0, 247, 1)',
+                        'rgba(153, 153, 153, 1)',
                     ],
-                    borderWidth: 1,
+                    borderWidth: 2,
                 },
             ],
         },
         options: {
+            title: {
+                display: true,
+                text: 'Weekly Asteroid Numbers',
+            },
+            legend: {
+                display: false,
+            },
             scales: {
                 yAxes: [
                     {
                         ticks: {
                             beginAtZero: true,
                         },
+                        scaleLabel: {
+                            display: true,
+                            labelString: '# of Asteroids',
+                        },
+                    },
+                ],
+                xAxes: [
+                    {
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Dates',
+                        },
                     },
                 ],
             },
-            responsive: true,
         },
     });
 }

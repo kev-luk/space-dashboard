@@ -1,11 +1,11 @@
 export default class Day {
-    constructor(name, numAsteroids) {
-        this.name = name;
+    constructor(date, numAsteroids) {
+        this.date = date;
         this.numAsteroids = numAsteroids;
     }
 
-    getName() {
-        return this.name;
+    getDate() {
+        return this.date;
     }
 
     getNumAsteroids() {

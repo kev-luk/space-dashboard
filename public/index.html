@@ -37,7 +37,10 @@
                         <div class="post-description">
                             <div class="post-info">
                                 <h1 class="title">Title</h1>
-                                <h3 class="date">Date</h3>
+                                <div class="author-date">
+                                    <span id="author">Author</span>,
+                                    <span id="date">Date</span>
+                                </div>
                             </div>
                             <p class="post-text">
                                 Lorem ipsum dolor sit amet consectetur
@@ -89,7 +92,38 @@
                 </div>
             </section>
             <section id="earth">
-                <div class="earth-container"></div>
+                <div class="earth-container">
+                    <div class="earth-title">
+                        <h1>Earth Satellite Picture</h1>
+                    </div>
+                    <div class="satellite-container">
+                        <div class="satellite-description">
+                            <div class="satellite-text">
+                                <p>
+                                    Retrieve's satellite image of location.
+                                </p>
+                            </div>
+                            <div>
+                                <form action="/earth" method="POST">
+                                    <div class="form-group">
+                                        <label for="address">Address</label>
+                                        <input
+                                            type="text"
+                                            id="address"
+                                            name="address"
+                                            class="address-input"
+                                            placeholder="Enter Address"
+                                        />
+                                    </div>
+                                    <button type="submit" class="enter-btn">
+                                        Enter
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="satellite-image"></div>
+                    </div>
+                </div>
             </section>
             <section id="about">
                 <h1>About</h1>
