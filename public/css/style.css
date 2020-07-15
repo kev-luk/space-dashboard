@@ -151,7 +151,7 @@ body {
 
 .author-date {
     opacity: 0.4;
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
 }
 
 .post-text {
@@ -238,6 +238,16 @@ body {
 #asteroidDiameter,
 #asteroidDate {
     font-weight: 900;
+}
+
+.data-graph {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), 0 2px 2px rgba(0, 0, 0, 0.12),
+        0 4px 4px rgba(0, 0, 0, 0.16), 0 8px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* EARTH Section */

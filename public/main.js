@@ -25,6 +25,7 @@ fetch('/asteroid')
     .then((data) => {
         fillNEOWS(data);
         createChart(data);
+        console.log(data);
     });
 
 // fetch('/earth')
@@ -183,7 +184,7 @@ function createChart(data) {
         options: {
             title: {
                 display: true,
-                text: 'Weekly Asteroid Numbers',
+                text: 'Daily Asteroid Count',
             },
             legend: {
                 display: false,
@@ -196,7 +197,7 @@ function createChart(data) {
                         },
                         scaleLabel: {
                             display: true,
-                            labelString: '# of Asteroids',
+                            labelString: 'Number of Asteroids',
                         },
                     },
                 ],
