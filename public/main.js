@@ -1,5 +1,5 @@
 import Asteroid from './object/Asteroid.js';
-import Day from './object/day.js';
+import Day from './object/Day.js';
 
 const astronomyIMG = document.querySelector('.image-container');
 const titleElement = document.querySelector('.title');
@@ -13,11 +13,41 @@ const asteroidDistance = document.querySelector('#asteroidDistance');
 const asteroidDiameter = document.querySelector('#asteroidDiameter');
 const asteroidDate = document.querySelector('#asteroidDate');
 const ctx = document.getElementById('myChart');
+const searchBarElement = document.querySelector('.search-bar');
+const searchBoxElement = new google.maps.places.SearchBox(searchBarElement);
+const satelliteIMG = document.querySelector('.satellite-image');
+
+searchBoxElement.addListener('places_changed', (e) => {
+    const location = searchBoxElement.getPlaces()[0];
+
+    if (location == null) return;
+
+    fetch('/earth', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+        },
+        body: JSON.stringify({
+            latitude: location.geometry.location.lat(),
+            longitude: location.geometry.location.lng(),
+        }),
+    })
+        .then((res) => res.json())
+        .then((data) => {
+            satelliteIMG.removeChild(document.querySelector('#earth-message'));
+            satelliteIMG.style.background = `url(${data.url}) no-repeat center center/cover`;
+        });
+});
 
 fetch('/astro')
     .then((res) => res.json())
     .then((data) => {
         fillAPOD(data);
+    })
+    .catch((error) => {
+        console.error('Error: ', error);
+        errorMessage();
     });
 
 fetch('/asteroid')
@@ -25,19 +55,22 @@ fetch('/asteroid')
     .then((data) => {
         fillNEOWS(data);
         createChart(data);
-        console.log(data);
     });
 
-// fetch('/earth')
-//     .then((res) => res.json())
-//     .then((data) => {
-//         fillEarth(data);
-//     });
+function errorMessage() {
+    postTextElement.textContent =
+        'Unable to retrieve data from NASA API. Please refresh the page or try again later.';
+    postTextElement.style.fontWeight = '900';
+    postTextElement.style.textDecorationLine = 'underline';
+    postTextElement.style.textDecorationStyle = 'solid';
+}
 
 function fillAPOD(data) {
-    titleElement.innerHTML = data.title;
-    authorElement.innerHTML = data.copyright;
-    dateElement.innerHTML = data.date;
+    titleElement.textContent = data.title;
+    authorElement.textContent = data.copyright;
+    dateElement.textContent = data.date;
+
+    astronomyIMG.removeChild(document.querySelector('#apod-message'));
 
     if (data.media_type == 'image') {
         astronomyIMG.style.background = `url(${data.url}) no-repeat center center/cover`;
@@ -45,22 +78,20 @@ function fillAPOD(data) {
         createVideo(data.url);
     }
 
-    postTextElement.innerHTML = data.explanation;
+    postTextElement.textContent = data.explanation;
 }
 
 function fillNEOWS(data) {
-    totalAsteroids.innerHTML = data.element_count;
-    asteroidName.innerHTML = findNearestAsteroid(data).name;
-    asteroidDistance.innerHTML = `${findNearestAsteroid(
+    totalAsteroids.textContent = data.element_count;
+    asteroidName.textContent = findNearestAsteroid(data).name;
+    asteroidDistance.textContent = `${findNearestAsteroid(
         data
     ).nearestDistance.toFixed(2)} km`;
-    asteroidDiameter.innerHTML = `${findNearestAsteroid(data).diameter.toFixed(
-        2
-    )} km`;
-    asteroidDate.innerHTML = findNearestAsteroid(data).closestAproachDate;
+    asteroidDiameter.textContent = `${findNearestAsteroid(
+        data
+    ).diameter.toFixed(2)} km`;
+    asteroidDate.textContent = findNearestAsteroid(data).closestAproachDate;
 }
-
-function fillEarth(data) {}
 
 function createVideo(data) {
     let video = document.createElement('iframe');
@@ -184,7 +215,7 @@ function createChart(data) {
         options: {
             title: {
                 display: true,
-                text: 'Daily Asteroid Count',
+                text: 'Daily Asteroid Count for Past 7 Days',
             },
             legend: {
                 display: false,

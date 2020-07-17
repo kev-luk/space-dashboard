@@ -2,11 +2,15 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./css/style.css" />
         <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/simplebar@5.2.1/dist/simplebar.css"
         />
+        <link rel="stylesheet" href="./css/style.css" />
+        <script
+            type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw5lpprcWbQFn-Ior8mTwGZ_HgwD-QPD8&libraries=places"
+        ></script>
         <title>Gallery</title>
     </head>
     <body>
@@ -16,7 +20,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#APOD">APOD</a></li>
                     <li><a href="#neows">NeoWs</a></li>
-                    <li><a href="#earth">Earth</a></li>
+                    <li><a href="#earth">Landsat</a></li>
                     <li><a href="#about">About</a></li>
                 </ul>
             </nav>
@@ -33,7 +37,11 @@
                         <h1>Astronomy Picture of the Day</h1>
                     </div>
                     <div class="post-container">
-                        <div class="image-container"></div>
+                        <div class="image-container">
+                            <p id="apod-message">
+                                No image
+                            </p>
+                        </div>
                         <div class="post-description">
                             <div class="post-info">
                                 <h1 class="title">Title</h1>
@@ -42,13 +50,11 @@
                                     <span id="date">Date</span>
                                 </div>
                             </div>
-                            <p class="post-text">
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Quos exercitationem autem sed
-                                omnis ducimus adipisci, quis id aspernatur sint
-                                amet voluptatibus, voluptatum corporis in culpa
-                                minus totam dolorum iure qui.
-                            </p>
+                            <div id="scroll-div" data-simplebar>
+                                <p class="post-text">
+                                    No text
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -94,34 +100,28 @@
             <section id="earth">
                 <div class="earth-container">
                     <div class="earth-title">
-                        <h1>Earth Satellite Picture</h1>
+                        <h1>Satellite Image</h1>
+                        <h4>
+                            Retrieve the most recent satellite image of your
+                            desired location.
+                        </h4>
                     </div>
                     <div class="satellite-container">
-                        <div class="satellite-description">
-                            <div class="satellite-text">
-                                <p>
-                                    Retrieve's satellite image of location.
-                                </p>
-                            </div>
-                            <div>
-                                <form action="/earth" method="POST">
-                                    <div class="form-group">
-                                        <label for="address">Address</label>
-                                        <input
-                                            type="text"
-                                            id="address"
-                                            name="address"
-                                            class="address-input"
-                                            placeholder="Enter Address"
-                                        />
-                                    </div>
-                                    <button type="submit" class="enter-btn">
-                                        Enter
-                                    </button>
-                                </form>
-                            </div>
+                        <div class="satellite-input">
+                            <label for="location">Location</label>
+                            <input
+                                type="text"
+                                id="location"
+                                name="location"
+                                class="search-bar"
+                                placeholder="Enter Location"
+                            />
                         </div>
-                        <div class="satellite-image"></div>
+                        <div class="satellite-image">
+                            <p id="earth-message">
+                                No image
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -137,6 +137,7 @@
         </div>
         <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simplebar@5.2.1/dist/simplebar.min.js"></script>
         <script src="main.js" type="module"></script>
         <script src="./object/smooth-scroll.js"></script>
     </body>
