@@ -9,3 +9,5 @@ Space-related information collected from NASA APIs:
 Read more about these APIs at https://api.nasa.gov/
 
 Chart.js was used to create the graph in this project.
+
+Learn more at https://www.chartjs.org/
