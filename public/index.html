@@ -107,15 +107,25 @@
                         </h4>
                     </div>
                     <div class="satellite-container">
-                        <div class="satellite-input">
-                            <label for="location">Location</label>
-                            <input
-                                type="text"
-                                id="location"
-                                name="location"
-                                class="search-bar"
-                                placeholder="Enter Location"
-                            />
+                        <div class="satellite-details">
+                            <div class="satellite-input">
+                                <label for="location">Location</label>
+                                <input
+                                    type="text"
+                                    id="location"
+                                    name="location"
+                                    class="search-bar"
+                                    placeholder="Enter Location"
+                                />
+                            </div>
+                            <div class="image-details">
+                                <p>Latitude: <span id="latitude">-</span></p>
+                                <p>Longitude: <span id="longitude">-</span></p>
+                                <p>
+                                    Date/Time:
+                                    <span id="image-date">-</span>
+                                </p>
+                            </div>
                         </div>
                         <div class="satellite-image">
                             <p id="earth-message">

@@ -16,6 +16,9 @@ const ctx = document.getElementById('myChart');
 const searchBarElement = document.querySelector('.search-bar');
 const searchBoxElement = new google.maps.places.SearchBox(searchBarElement);
 const satelliteIMG = document.querySelector('.satellite-image');
+const latitude = document.querySelector('#latitude');
+const longitude = document.querySelector('#longitude');
+const imageDate = document.querySelector('#image-date');
 
 searchBoxElement.addListener('places_changed', (e) => {
     const location = searchBoxElement.getPlaces()[0];
@@ -35,6 +38,10 @@ searchBoxElement.addListener('places_changed', (e) => {
     })
         .then((res) => res.json())
         .then((data) => {
+            console.log(data);
+            latitude.textContent = location.geometry.location.lat();
+            longitude.textContent = location.geometry.location.lng();
+            imageDate.textContent = data.date;
             satelliteIMG.removeChild(document.querySelector('#earth-message'));
             satelliteIMG.style.background = `url(${data.url}) no-repeat center center/cover`;
         });

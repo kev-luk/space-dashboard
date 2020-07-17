@@ -292,26 +292,51 @@ body {
     margin: 0em 3em;
 }
 
-.satellite-input {
-    height: 50%;
+.satellite-details {
+    height: 95%;
     text-align: center;
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
+}
+
+.satellite-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 50%;
+}
+
+.image-details {
+    width: 70%;
+    height: 50%;
+    text-align: left;
+}
+
+#latitude,
+#longitude,
+#image-date {
+    font-weight: 900;
+}
+
+.image-details p {
+    margin-bottom: 1em;
 }
 
 .search-bar {
     display: block;
     width: 70%;
     margin-top: 0.5em;
-    padding: 1em;
+    padding: 0.5em;
     border: none;
     outline: none;
     background-color: transparent;
     border-bottom: 2px solid black;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .satellite-image {
