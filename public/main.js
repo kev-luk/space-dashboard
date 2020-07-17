@@ -1,5 +1,5 @@
-import Asteroid from './object/Asteroid.js';
-import Day from './object/Day.js';
+import Asteroid from './objects/Asteroid.js';
+import Day from './objects/Day.js';
 
 const astronomyIMG = document.querySelector('.image-container');
 const titleElement = document.querySelector('.title');
@@ -38,11 +38,13 @@ searchBoxElement.addListener('places_changed', (e) => {
     })
         .then((res) => res.json())
         .then((data) => {
-            console.log(data);
-            latitude.textContent = location.geometry.location.lat();
-            longitude.textContent = location.geometry.location.lng();
-            imageDate.textContent = data.date;
-            satelliteIMG.removeChild(document.querySelector('#earth-message'));
+            latitude.textContent = location.geometry.location.lat().toFixed(4);
+            longitude.textContent = location.geometry.location.lng().toFixed(4);
+            console.log(data.date);
+            imageDate.textContent = `${data.date.substring(
+                0,
+                10
+            )} ${data.date.substring(11, 19)}`;
             satelliteIMG.style.background = `url(${data.url}) no-repeat center center/cover`;
         });
 });
