@@ -11,3 +11,21 @@ Read more about these APIs at https://api.nasa.gov/
 Chart.js was used to create the graph in this project.
 
 Learn more at https://www.chartjs.org/
+
+## Dependencies
+
+```
+npm install axios
+```
+
+```
+npm install express
+```
+
+```
+npm install chart.js
+```
+
+```
+npm install nodemon
+```
