@@ -45,6 +45,9 @@ body {
 .page-container {
     width: 100%;
     height: 100%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
 }
 
 .nav-bar {
@@ -80,6 +83,10 @@ body {
 
 .nav-bar ul li a:hover {
     opacity: 0.5;
+}
+
+section {
+    scroll-snap-align: center;
 }
 
 #home,
