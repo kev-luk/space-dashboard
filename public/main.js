@@ -19,6 +19,7 @@ const satelliteIMG = document.querySelector('.satellite-image');
 const latitude = document.querySelector('#latitude');
 const longitude = document.querySelector('#longitude');
 const imageDate = document.querySelector('#image-date');
+const satelliteImageText = document.querySelector('#satellite-image-text');
 
 searchBoxElement.addListener('places_changed', (e) => {
     const location = searchBoxElement.getPlaces()[0];
@@ -38,6 +39,7 @@ searchBoxElement.addListener('places_changed', (e) => {
     })
         .then((res) => res.json())
         .then((data) => {
+            satelliteImageText.style.display = 'none';
             latitude.textContent = location.geometry.location.lat().toFixed(4);
             longitude.textContent = location.geometry.location.lng().toFixed(4);
             console.log(data.date);
