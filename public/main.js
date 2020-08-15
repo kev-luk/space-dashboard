@@ -55,10 +55,6 @@ fetch('/astro')
     .then((res) => res.json())
     .then((data) => {
         fillAPOD(data);
-    })
-    .catch((error) => {
-        console.error('Error: ', error);
-        errorMessage();
     });
 
 fetch('/asteroid')
