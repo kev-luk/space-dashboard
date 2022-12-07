@@ -21,10 +21,10 @@
     "homepage": "https://github.com/Kevin-Luk-Hub/nasa-gallery#readme",
     "dependencies": {
         "axios": "^0.19.2",
-        "body-parser": "^1.19.0",
+        "body-parser": "^1.20.1",
         "chart.js": "^2.9.3",
         "dotenv": "^8.2.0",
-        "express": "^4.17.1",
+        "express": "^4.18.2",
         "moment": "^2.27.0",
         "multiparty": "^4.2.1",
         "nodemon": "^2.0.4",
